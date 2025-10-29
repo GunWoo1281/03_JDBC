@@ -1,6 +1,5 @@
 package edu.kh.jdbc;
 
-import java.awt.Cursor;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
