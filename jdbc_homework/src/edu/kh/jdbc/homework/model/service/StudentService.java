@@ -65,12 +65,14 @@ public class StudentService {
 	public int deleteStudent(int studentNum) throws Exception {
 		Connection conn = JDBCTemplate.getConnection();
 		int result = dao.deleteStudent(conn, studentNum);
+		
 		if (result > 0) {
 			JDBCTemplate.commit(conn);
 		}
 		else {
 			JDBCTemplate.rollback(conn);
 		}
+		
 		JDBCTemplate.close(conn);
 		return result;
 	}

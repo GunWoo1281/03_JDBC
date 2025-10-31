@@ -59,7 +59,7 @@ public class StudentView {
 				}
 			} catch (InputMismatchException e) {
 				System.out.println("입력 형식이 올바르지 않습니다. 다시 입력하세요.");
-				sc.nextLine(); // 입력 버퍼에 남아있는 잘못된 문자열 제거
+				sc.nextLine();
 			}
 			catch (Exception e) {
 				e.printStackTrace();
