@@ -1,4 +1,4 @@
-package edu.kh.jdbc.common;
+package edu.kh.jdbc.homework.common;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -12,7 +12,6 @@ public class JDBCTemplate {
 	
 	public static Connection getConnection() {
 		try {
-			//기존 connection 객체가 있고 닫혀있지 않다면
 			if (conn != null && !conn.isClosed()) return conn;
 			else {
 				Properties prop = new Properties();
@@ -21,14 +20,13 @@ public class JDBCTemplate {
 				Class.forName(prop.getProperty("driver"));
 				conn = java.sql.DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("user"), prop.getProperty("password"));
 			
-				conn.setAutoCommit(false); //자동커밋 비활성화
+				conn.setAutoCommit(false);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("커넥션 생성 중 예외 발생(JDBCTemplate의 getConnection())");
 			e.printStackTrace();
 		}
-		
 		return conn;
 	}
 	
